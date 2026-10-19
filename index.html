@@ -115,7 +115,7 @@
         </div>
 
         <!-- Screenshots Carousel (Swiper) -->
-        <div class="w-full max-w-5xl my-6">
+        <div class="w-full max-w-5xl my-6" dir="ltr">
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
                     <!-- Slide 1 -->
@@ -242,6 +242,11 @@
                 body.classList.remove('lang-fa');
                 langBtn.innerText = 'FA / EN';
             }
+
+            // Update Swiper layout & direction to prevent position breaking
+            setTimeout(() => {
+                swiper.update();
+            }, 50);
 
             // Swap all texts with data-en and data-fa attributes
             document.querySelectorAll('[data-en]').forEach(el => {
